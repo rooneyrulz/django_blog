@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+
+# Redirect to Home View
+def redirect_to_home_view(request):
+	return redirect('/blog/home')
 
 
 # Blog Home View
