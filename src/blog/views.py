@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 # Blog Home View
 def blog_home_view(request):
-	return HttpResponse('Home')
+	return render(request, 'blog/blog_home.html', {})
 
 
 # Blog About View
 def blog_about_view(request):
-	return HttpResponse('About')
+	return render(request, 'blog/blog_about.html', {})
+	
 
