@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from .models import Blog
+
 
 # Redirect to Home View
 def redirect_to_home_view(request):
@@ -13,7 +15,11 @@ def blog_home_view(request):
 
 # Blog List View
 def blog_list_view(request):
-	return render(request, 'blog/blog_list.html', {})
+	blog_list = Blog.objects.all()
+	context = {
+		'blog_list': blog_list
+	}
+	return render(request, 'blog/blog_list.html', context)
 
 
 # Blog Create View
@@ -23,7 +29,11 @@ def blog_create_view(request):
 
 # Blog Details View
 def blog_details_view(request, id):
-	return render(request, 'blog/blog_details.html', {'id': id})
+	blog_object = Blog.objects.get(id=id)
+	context = {
+		'blog_object': blog_object
+	}
+	return render(request, 'blog/blog_details.html', context)
 
 
 # Blog About View

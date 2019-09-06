@@ -2,5 +2,30 @@
 
 {% block content %}
 	<h1 class="text-info">Blog Details</h1>
-	<p class="lead">{{id}}</p>
+	<br>
+	<div class="card">
+		<div class="card-body">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<strong>Title</strong>
+					<span class="float-right">{{ blog_object.title }}</span>
+				</li>
+				<li class="list-group-item">
+					<strong>Desc</strong>
+					<span class="float-right">{{ blog_object.description }}</span>
+				</li>
+				<li class="list-group-item">
+					<strong>Author</strong>
+					<span class="float-right">{{ blog_object.author }}</span>
+				</li>
+				<li class="list-group-item">
+					<strong>Created At</strong>
+					<span class="float-right">{{ blog_object.date }}</span>
+				</li>
+				<li class="list-group-item">
+					<a href="/blog/list" class="btn btn-info">Back</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 {% endblock %}
