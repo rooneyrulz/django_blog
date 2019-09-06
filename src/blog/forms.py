@@ -47,13 +47,12 @@ class BlogForm(forms.ModelForm):
 		)
 	)
 
-	# date = forms.DateTimeField(
-	# 	widget=forms.DateTimeField(
-	# 		attrs={
-	# 			'id': 'date',
-	# 			'class': 'form-control form-control-lg'
-	# 		}
-	# 	)
-	# )
+	date = forms.DateField(
+		widget=forms.SelectDateWidget(
+			attrs={
+				'id': 'date',
+			}
+		)
+	)
 
 	
