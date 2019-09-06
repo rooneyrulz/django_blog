@@ -25,6 +25,8 @@ class BlogForm(forms.ModelForm):
 	)
 
 	description = forms.CharField(
+		required=False,
+		initial="woow! It's a nice blog",
 		widget=forms.Textarea(
 			attrs={
 				'id': 'description',
