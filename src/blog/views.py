@@ -45,6 +45,19 @@ def blog_details_view(request, id):
 	return render(request, 'blog/blog_details.html', context)
 
 
+# Blog Edit View
+def blog_edit_view(request, id):
+	blog_object = get_object_or_404(Blog, id=id)
+	form = BlogForm(request.POST or None, instance=blog_object)
+	if form.is_valid():
+		form.save()
+		return redirect(f'/blog/details/{id}')
+	context = {
+		'form': form
+	}
+	return render(request, 'blog/blog_edit.html', context)
+
+
 # Blog About View
 def blog_about_view(request):
 	return render(request, 'blog/blog_about.html', {})
