@@ -4,6 +4,16 @@ from .models import Blog
 
 
 class BlogForm(forms.ModelForm):
+	class Meta:
+		model = Blog
+		fields = [
+			'title',
+			'description',
+			'author',
+			'date'
+		]
+
+
 	title = forms.CharField(
 		widget=forms.TextInput(
 			attrs={
@@ -44,11 +54,4 @@ class BlogForm(forms.ModelForm):
 	# 	)
 	# )
 
-	class Meta:
-		model = Blog
-		fields = [
-			'title',
-			'description',
-			'author',
-			'date'
-		]
+	
