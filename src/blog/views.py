@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Blog
+from .forms import BlogForm
 
 
 # Redirect to Home View
@@ -24,7 +25,15 @@ def blog_list_view(request):
 
 # Blog Create View
 def blog_create_view(request):
-	return render(request, 'blog/blog_create.html', {})
+	form = BlogForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		form = BlogForm()
+
+	context = {
+	'form': form
+	}
+	return render(request, 'blog/blog_create.html', context)
 
 
 # Blog Details View
