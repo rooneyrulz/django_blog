@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Blog
 
@@ -29,7 +29,7 @@ def blog_create_view(request):
 
 # Blog Details View
 def blog_details_view(request, id):
-	blog_object = Blog.objects.get(id=id)
+	blog_object = get_object_or_404(Blog, id=id)
 	context = {
 		'blog_object': blog_object
 	}

@@ -23,7 +23,10 @@
 					<span class="float-right">{{ blog_object.date }}</span>
 				</li>
 				<li class="list-group-item">
-					<a href="/blog/list" class="btn btn-info">Back</a>
+					<div class="btn-group">
+						<a href="/blog/{{blog_object.id}}/edit" class="btn btn-info">Edit</a>
+						<a href="/blog/list" class="btn btn-info">Back</a>
+					</div>
 				</li>
 			</ul>
 		</div>
