@@ -20,6 +20,17 @@
           <a class="nav-link" href="/blog/about">About</a>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/logout">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/login">Login</a>
+          </li>
+        {% endif %}
+      </ul>
     </div>
   </div>
 </nav>
