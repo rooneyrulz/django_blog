@@ -11,13 +11,17 @@ def redirect_to_home_view(request):
 
 # Blog Home View
 def blog_home_view(request):
-	return render(request, 'blog/blog_home.html', {})
+	context = {
+		'title': 'Home'
+	}
+	return render(request, 'blog/blog_home.html', context)
 
 
 # Blog List View
 def blog_list_view(request):
 	blog_list = Blog.objects.all()
 	context = {
+		'title': 'List',
 		'blog_list': blog_list
 	}
 	return render(request, 'blog/blog_list.html', context)
@@ -31,7 +35,8 @@ def blog_create_view(request):
 		form = BlogForm()
 
 	context = {
-	'form': form
+		'title': 'Create',
+		'form': form
 	}
 	return render(request, 'blog/blog_create.html', context)
 
@@ -40,6 +45,7 @@ def blog_create_view(request):
 def blog_details_view(request, id):
 	blog_object = get_object_or_404(Blog, id=id)
 	context = {
+		'title': 'Details',
 		'blog_object': blog_object
 	}
 	return render(request, 'blog/blog_details.html', context)
@@ -53,6 +59,7 @@ def blog_edit_view(request, id):
 		form.save()
 		return redirect(f'/blog/details/{id}')
 	context = {
+		'title': 'Edit',
 		'form': form
 	}
 	return render(request, 'blog/blog_edit.html', context)
@@ -60,6 +67,9 @@ def blog_edit_view(request, id):
 
 # Blog About View
 def blog_about_view(request):
-	return render(request, 'blog/blog_about.html', {})
+	context = {
+		'title': 'About'
+	}
+	return render(request, 'blog/blog_about.html', context)
 	
 

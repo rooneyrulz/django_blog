@@ -2,10 +2,10 @@
 
 {% block content %}
 	<h1 class="text-info">Blog Details</h1>
-	<hr>
+	<hr class="bg-light">
 	<br>
-	<div class="card">
-		<div class="card-body">
+	<div style="box-shadow: 2px 4px 4px 8px #000 solid; border-radius: 0" class="card border-info">
+		<div class="card-body ">
 			<ul class="list-group">
 				<li class="list-group-item">
 					<strong>Title</strong>
@@ -25,8 +25,8 @@
 				</li>
 				<li class="list-group-item">
 					<div class="btn-group">
-						<a href="{{ blog_object.get_absolute_url }}edit" class="btn btn-info">Edit</a>
-						<a href="/blog/list" class="btn btn-info">Back</a>
+						<a style="border-radius: 0" href="{{ blog_object.get_absolute_url }}edit" class="btn btn-info">Edit</a>
+						<a style="border-radius: 0" href="/blog/list" class="btn btn-info">Back</a>
 					</div>
 				</li>
 			</ul>

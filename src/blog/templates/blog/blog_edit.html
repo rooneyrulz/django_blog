@@ -2,11 +2,11 @@
 
 {% block content %}
 	<h1 class="text-info">Edit Blog</h1>
-	<hr>
+	<hr class="bg-light">
 	<br>
-	<form method="POST" action=".">
+	<form method="POST" action="." class="text-light">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<button type="submit" class="btn btn-info">Update</button>
+		<button style="border-radius: 0" type="submit" class="btn btn-info">Update</button>
 	</form>
 {% endblock %}

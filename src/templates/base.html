@@ -4,9 +4,13 @@
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Blog</title>
+	{% if title %}
+		<title>Blog | {{ title }}</title>
+	{% else %}
+		<title>Blog</title>
+	{% endif %}
 </head>
-<body style="font-family: 'Poppins', sans-serif;">
+<body style="font-family: 'Poppins', sans-serif; background: #555;">
 
 	<header class="mb-5">
 		{% include 'navbar.html' %}

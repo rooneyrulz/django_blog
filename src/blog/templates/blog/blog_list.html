@@ -2,15 +2,15 @@
 
 {% block content %}
 	<h1 class="text-info">Blogs</h1>
-	<hr>
+	<hr class="bg-light">
 	<br>
 	{% if blog_list %}
 		<div class="row">
 		{% for blog in blog_list %}
 			<div class="col-sm-12 col-md-4 col-lg-3 mb-4">
-				<div class="card">
+				<div style="box-shadow: 2px 4px 4px 8px #000 solid; border-radius: 0" class="card border-info">
 					<div class="card-body">
-						<ul class="list-group">
+						<ul class="list-group bg-info">
 							<li class="list-group-item">
 								<strong>{{ blog.title }}</strong>
 							</li>
@@ -18,7 +18,7 @@
 								{{ blog.author }}
 							</li>
 							<li class="list-group-item">
-								<a href="{{ blog.get_absolute_url }}" class="btn btn-info">View</a>
+								<a style="border-radius: 0" href="{{ blog.get_absolute_url }}" class="btn btn-info btn-sm">View</a>
 							</li>
 						</ul>
 					</div>
